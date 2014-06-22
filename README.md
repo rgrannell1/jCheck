@@ -30,4 +30,15 @@ run(1)
 
 ## Language.
 
-* **when**: when a predicate is true, assert that other predicates are true too.
+jCheck has a very small grammar.
+
+***over**: Bind several variables to random values.
+
+**describe**: Describe what an assertion proves about your programs.
+
+**run**: Execute a test object.
+
+### Assertions.
+
+* **holdsWhen**: When a predicate is true, assert that other predicates are true too.
+* **failsWhen**: When a predicate is true, assert that other functions always fail.
