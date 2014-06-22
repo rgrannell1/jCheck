@@ -7,11 +7,13 @@ specify test-cases or test-case generators for jCheck tests.
 
 ## Installation.
 
-## Usage.
+## Language.
 
-
+jCheck has a very small grammar.
 
 ```js
+myTest .
+
 over_('a', 'b') .
 
 describe('addition is commutative') .
@@ -24,21 +26,13 @@ holdsWhen_(
 		return a + b === b + a
 	}
 ) .
-
-run(1)
 ```
 
-## Language.
+* **over, over_**: Bind several variables to random values.
 
-jCheck has a very small grammar.
+* **describe**: Describe what an assertion proves about your programs.
 
-***over**: Bind several variables to random values.
+* **holdsWhen, holdsWhen_**: When a predicate is true, assert that other predicates are true too.
+* **failsWhen, failsWhen_**: When a predicate is true, assert that other functions always fail.
 
-**describe**: Describe what an assertion proves about your programs.
-
-**run**: Execute a test object.
-
-### Assertions.
-
-* **holdsWhen**: When a predicate is true, assert that other predicates are true too.
-* **failsWhen**: When a predicate is true, assert that other functions always fail.
+* **run**: Execute a test object.
