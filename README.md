@@ -15,7 +15,7 @@ specify test-cases or test-case generators for jCheck tests.
 over_('a', 'b') .
 
 describe('addition is commutative') .
-when_(
+holdsWhen_(
 	function (a, b) {
 		return typeof a === 'number' && a === a &&
 		typeof b === 'number' && b === b
