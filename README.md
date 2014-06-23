@@ -8,7 +8,7 @@ jCheck
 
 > But you with pleasure own your errors past,
 
-> And make each day a critique on the last." 
+> And make each day a critique on the last."
 
 > Alexander Pope.
 
@@ -31,10 +31,10 @@ failure functions are ran over a stream of random inputs. The tests run for a se
 and test with increasingly long and large inputs.
 
 ```js
-over_('a', 'b') .
+over_('a', 'b')
 
-describe('addition is commutative') .
-holdsWhen_(
+.describe('addition is commutative')
+.holdsWhen_(
 	function (a, b) {
 		return typeof a === 'number' && a === a &&
 		typeof b === 'number' && b === b
@@ -42,9 +42,9 @@ holdsWhen_(
 	function (a, b) {
 		return a + b === b + a
 	}
-) .
+)
 
-run(1)
+.run(1)
 ```
 
 * **over, over_**: Bind several variables to random values.
