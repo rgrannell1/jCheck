@@ -16,11 +16,9 @@ cd jCheck
 ## Language.
 
 jCheck has a very small grammar. A jCheck test binds parametres - in this case 'a' and 'b' - to
-random values. Properties - such as predicate functions and known failure functions - are ran over
-a stream of possible inputs, to prove invariants always hold true. The tests run for a set timespan,
+random values. To prove invariants always hold true, properties such as predicates and known
+failure functions are ran over a stream of random inputs. The tests run for a set timespan,
 and test with increasingly long and large inputs.
-
-The tests can be built up in any order.
 
 ```js
 over_('a', 'b') .
@@ -47,6 +45,12 @@ run(1)
 * **failsWhen, failsWhen_**: When a predicate is true, assert that other functions always fail.
 
 * **run**: Execute a test object.
+
+The tests can be built up in any order.
+
+If a predicate fails, or a known failure fails to fail, then jCheck will simplify the errant
+input to something smaller and easier to read. jCheck tests can be run from a web interface or,
+for fellow users with bearded necks and sallow faces, from the command-line.
 
 ## License
 
