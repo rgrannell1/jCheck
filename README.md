@@ -1,3 +1,4 @@
+
 jCheck
 ======
 
@@ -14,11 +15,14 @@ cd jCheck
 
 ## Language.
 
-jCheck has a very small grammar.
+jCheck has a very small grammar. A jCheck test binds parametres - in this case 'a' and 'b' - to
+random values. Properties - such as predicate functions and known failure functions - are ran over
+a stream of possible inputs, to prove invariants always hold true. The tests run for a set timespan,
+and test with increasingly long and large inputs.
+
+The tests can be built up in any order.
 
 ```js
-myTest .
-
 over_('a', 'b') .
 
 describe('addition is commutative') .
@@ -31,6 +35,7 @@ holdsWhen_(
 		return a + b === b + a
 	}
 ) .
+
 run(1)
 ```
 
@@ -42,7 +47,6 @@ run(1)
 * **failsWhen, failsWhen_**: When a predicate is true, assert that other functions always fail.
 
 * **run**: Execute a test object.
-
 
 ## License
 
