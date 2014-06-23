@@ -48,7 +48,7 @@ run(1)
 
 The tests can be built up in any order.
 
-If a predicate fails — or a known-failure fails to fail — then jCheck will simplify the errant
+If a predicate fails — or a known-failure fails to fail — jCheck will simplify the errant
 input to something smaller and easier to read. jCheck tests can be run from a web interface or,
 for fellow users with bearded necks and sallow faces, from the command-line.
 
