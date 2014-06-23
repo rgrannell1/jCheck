@@ -2,13 +2,13 @@
 jCheck
 ======
 
-> *"Some positive persisting fops we know,
+> "Some positive persisting fops we know,
 
-> Who, if once wrong, will needs be always so;
+> Who, if once wrong, will needs be always so;*
 
 > But you with pleasure own your errors past,
 
-> And make each day a critique on the last."* 
+> And make each day a critique on the last." 
 
 > - Alexander Pope.
 
