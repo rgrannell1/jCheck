@@ -2,6 +2,13 @@
 jCheck
 ======
 
+```
+> *'Some positive persisting fops we know,
+Who, if once wrong, will needs be always so;
+But you with pleasure own your errors past,
+And make each day a critique on the last.'* - Alexander Pope.
+```
+
 jCheck is a minimal property-based testing framework for JavaScript / Node.
 Its main focus is to remove testing boilerplate; you don't need to
 specify test-cases or test-case generators for jCheck tests.
