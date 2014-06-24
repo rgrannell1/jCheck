@@ -1,14 +1,33 @@
 
-over_('a', 'b') .
+const jcheck = require('../jcheck')
 
-describe('addition & multiplication are commutative') .
-when_(
-	typeof(a) === 'number' && a === a &&
-	typeof(b) === 'number' && b === b,
-	a + b === b + a,
-	a * b === b * a
-) .
+const over  = jcheck.over
+const over_ = jcheck.over_
 
-describe('multiplication is commutative') .
+const describe = jcheck.describe
 
-run(1)
+const holdsWhen  = jcheck.holdsWhen
+const holdsWhen_ = jcheck.holdsWhen_
+
+const run = jcheck.run
+
+
+
+
+
+
+
+over_('a', 'b')
+
+.describe('addition is commutative')
+.holdsWhen_(
+	function (a, b) {
+		return typeof a === 'number' && a === a &&
+		typeof b === 'number' && b === b
+	},
+	function (a, b) {
+		return a + b === b + a
+	}
+)
+
+.run(1)
