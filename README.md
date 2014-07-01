@@ -74,7 +74,7 @@ over_('a', 'b')
 
 * **run**: Execute a test object.
 
-The tests can be built up in any order.
+Tests can be built-up in any order.
 
 If a predicate fails — or a known-failure fails to fail — jCheck will simplify the errant
 input to something smaller and easier to read. jCheck tests can be run from a web interface or,
