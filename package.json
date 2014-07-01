@@ -1,4 +1,17 @@
 {
-	"name" : "kiwi"
-	"version" : "1.0.0",
+	"name":
+		"jCheck",
+	"version":
+		"0.1.0",
+	"description":
+		"Property-based JavaScript checking.",
+	"scripts": {
+		"test":
+			"node test/all.js"
+	},
+	"repository" : {
+		"type": "git",
+		"url" : "git://github.com/rgrannell1/jCheck.git"
+	},
+	"main": "jCheck.js"
 }
