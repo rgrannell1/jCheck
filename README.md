@@ -1,5 +1,5 @@
 
-jCheck
+jCheck v0.1.0 [![Build Status](https://travis-ci.org/rgrannell1/jCheck.png?branch=master)](https://travis-ci.org/rgrannell1/jCheck)
 ======
 
 > "Some positive persisting fops we know,
