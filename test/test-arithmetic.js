@@ -1,4 +1,16 @@
 
+require('./test-colourise')
+const should = require('should');
+
+
+
+
+
+
+
+
+
+
 const jcheck = require('../jcheck')
 
 const over  = jcheck.over
