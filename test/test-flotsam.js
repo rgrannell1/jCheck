@@ -9,6 +9,7 @@ const tabulate  = flotsam.tabulate
 const repeat    = flotsam.repeat
 const pluralise = flotsam.pluralise
 const addSuffix = flotsam.addSuffix
+const match     = flotsam.match
 
 
 
@@ -42,6 +43,26 @@ console.log('rightPad')
 
 console.log('match')
 
+	const _ = undefined
+
+	assert(
+		match([1, 2, 3], [
+			[[1, 2, _], true]
+		])
+	)
+
+	assert(
+		match([1, 2, 3], [
+			[[_, _, _], true]
+		])
+	)
+
+	assert(
+		match([1, 2, 3], [
+			[[1, _, 4], false],
+			[[_, _, _], true]
+		])
+	)
 
 console.log('addSuffix')
 
