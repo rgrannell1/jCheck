@@ -27,8 +27,8 @@ test-case generators is difficult & difficulty biases towards writing simple gen
 omitting more complex cases.
 
 jCheck is my attempt to add convenient, maximally-powerful testing to JavaScript. You won't deal with
-test-case generation at all; you state the inputs a property should work for, and jCheck verifies your
-assumption if it can't find a counterexample.
+test-case generation at all; you state the inputs a property should hold for, and jCheck verifies your
+property has no counterexamples.
 
 
 ## Installation.
@@ -46,7 +46,7 @@ cd jCheck
 jCheck has a tiny grammar. A jCheck test binds parametres — in this case 'a' and 'b' — to
 random values. To prove invariants always hold true, properties such as predicates and known
 failure functions are ran along a stream of random inputs. The tests run for a set timespan,
-and the test-cases get increasingly long and large over time.
+and the test-cases get longer and larger over time.
 
 ```js
 over_('a', 'b')
