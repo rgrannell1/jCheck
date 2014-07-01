@@ -12,9 +12,24 @@ jCheck
 
 > Alexander Pope.
 
-jCheck is a minimal property-based testing framework for JavaScript / Node.
-Its main focus is to remove testing boilerplate; you don't need to
-specify test-cases or test-case generators for jCheck tests.
+You want to verify that your programs work. The best way to
+test any assumption is to try disprove it by experimentation, excepting your assumption only when
+no counterexample can be found.
+
+Choosing good test-cases by hand is hard; you will be biased towards picking small test cases,
+you will use a small sample-size, and testing known-corner cases is second best to testing
+unknown corner cases, which are the real source of failures. Random sampling inputs is the only
+reliable way to test.
+
+The limiting factor to testing is your patience. Test-cases are data, and manually entering data
+is boring. Properties are predicates, which aren't as boring to write. From experience, writing
+test-case generators is difficult & difficulty biases towards writing simple generators and
+omitting more complex cases.
+
+jCheck is my attempt to add convenient, maximally-powerful testing to JavaScript. You won't deal with
+test-case generation at all; you state the inputs a property should work for, and jCheck verifies your
+assumption if it can't find a counterexample.
+
 
 ## Installation.
 
@@ -23,12 +38,15 @@ git clone https://github.com/rgrannell1/jCheck.git
 cd jCheck
 ```
 
+
+
+
 ## Language.
 
-jCheck has a very small grammar. A jCheck test binds parametres — in this case 'a' and 'b' — to
+jCheck has a tiny grammar. A jCheck test binds parametres — in this case 'a' and 'b' — to
 random values. To prove invariants always hold true, properties such as predicates and known
-failure functions are ran over a stream of random inputs. The tests run for a set timespan,
-and test with increasingly long and large inputs.
+failure functions are ran along a stream of random inputs. The tests run for a set timespan,
+and the test-cases get increasingly long and large over time.
 
 ```js
 over_('a', 'b')
