@@ -48,21 +48,57 @@ random values. To prove invariants always hold true, properties such as predicat
 failure functions are ran along a stream of random inputs. The tests run for a set timespan,
 and the test-cases get longer and larger over time.
 
-```js
-over_('a', 'b')
+Take this seemingly rigourous implementation of take, which takes the first n elements from
+an array.
 
-.describe('addition is commutative')
+```js
+var take = function (num, coll) {
+
+	if (toString.call(num) !== '[object Number]') {
+		throw TypeError('num must be a number')
+	}
+	if (num < 0) {
+		throw RangeError('num must be larger than one.')
+	}
+	if (Math.round(num) !== num) {
+		throw RangeError('num must be a round number')
+	}
+	if (num === Infinity) {
+		var num = coll.length
+	}
+
+	var out = []
+	for (var ith = 0; ith < num; ith++) {
+		out[ith] = coll[ith]
+	}
+	return out
+}
+```
+
+```js
+over_("num", "coll")
+
+.describe("take returns correct length")
 .holdsWhen_(
-	function (a, b) {
-		return typeof a === 'number' && a === a &&
-		typeof b === 'number' && b === b
+	function (num, coll) {
+		return toString.call(num) === "[object Number]" && toString.call(coll) === "[object Array]"
 	},
-	function (a, b) {
-		return a + b === b + a
+	function (num, coll) {
+		return take(num, coll).length === num
 	}
 )
 
-.run(1)
+.describe("take runs for all numbers")
+.worksWhen_(
+	function (num, coll) {
+		return toString.call(num) === "[object Number]" && toString.call(coll) === "[object Array]"
+	},
+	function (num, coll) {
+		take(num, coll)
+	}
+)
+
+.run()
 ```
 
 * **over, over_**: Bind several variables to random values.

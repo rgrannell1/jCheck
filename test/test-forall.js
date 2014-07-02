@@ -89,3 +89,61 @@ over_('val')
 )
 
 .run()
+
+
+
+
+
+
+
+
+
+
+
+
+
+var take = function (num, coll) {
+
+	if (toString.call(num) !== '[object Number]') {
+		throw TypeError('num must be a number')
+	}
+	if (num < 0) {
+		throw RangeError('num must be larger than one.')
+	}
+	if (Math.round(num) !== num) {
+		throw RangeError('num must be a round number')
+	}
+	if (num === Infinity) {
+		var num = coll.length
+	}
+
+	var out = []
+	for (var ith = 0; ith < num; ith++) {
+		out[ith] = coll[ith]
+	}
+	return out
+}
+
+over_("num", "coll")
+
+.describe("take returns correct length")
+.holdsWhen_(
+	function (num, coll) {
+		return toString.call(num) === "[object Number]" && toString.call(coll) === "[object Array]"
+	},
+	function (num, coll) {
+		return take(num, coll).length === num
+	}
+)
+
+.describe("take runs for all numbers")
+.worksWhen_(
+	function (num, coll) {
+		return toString.call(num) === "[object Number]" && toString.call(coll) === "[object Array]"
+	},
+	function (num, coll) {
+		take(num, coll)
+	}
+)
+
+.run()
