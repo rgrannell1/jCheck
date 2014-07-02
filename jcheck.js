@@ -1,6 +1,4 @@
 
-console.log( require('./lib/run-test') )
-
 module.exports = {
 	describe   : require('./lib/grammar').describe,
 

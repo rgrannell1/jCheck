@@ -35,11 +35,14 @@ console.log('_remove.string')
 
 console.log('_remove.number')
 
-	console.log(  remove(100) < 100   )
-	console.log(  is.number(remove(100)) )
+	assert(  remove(100) < 100   )
+	assert(  is.number(remove(100)) )
 
-	console.log(  remove(-100) > -100   )
-	console.log(  is.number(remove(-100)) )
+	assert(  remove(-100) > -100   )
+	assert(  is.number(remove(-100)) )
 
-	console.log(  remove(100.21123) < 100.21123 )
-	console.log(  is.number(remove(100.1321)) )
+	assert(  remove(100.21123) < 100.21123 )
+	assert(  is.number(remove(100.1321)) )
+
+console.log('_remove.array')
+
