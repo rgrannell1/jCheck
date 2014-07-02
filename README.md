@@ -85,8 +85,8 @@ over_("num", "coll")
 .describe("take returns correct length")
 .holdsWhen_(
 	function (num, coll) {
-		return is("Number", num) && num > 0 && Math.round(num) === num &&
-			is("Array", coll)
+		return is("Number", num) && is("Array", coll) &&
+			num > 0 && Math.round(num) === num
 	},
 	function (num, coll) {
 		return take(num, coll).length === num
@@ -96,15 +96,16 @@ over_("num", "coll")
 .describe("take runs for all numbers")
 .worksWhen_(
 	function (num, coll) {
-		return is("Number", num) && num > 0 && Math.round(num) === num &&
-			is("Array", coll)
+		return is("Number", num) && is("Array", coll) &&
+			num > 0 && Math.round(num) === num
 	},
 	function (num, coll) {
 		take(num, coll)
 	}
 )
 
-.run()```
+.run()
+```
 
 * **over, over_**: Bind several variables to random values.
 
