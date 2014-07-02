@@ -45,4 +45,3 @@ console.log('_remove.number')
 	assert(  is.number(remove(100.1321)) )
 
 console.log('_remove.array')
-

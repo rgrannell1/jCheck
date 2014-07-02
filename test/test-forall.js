@@ -22,7 +22,7 @@ over_('val')
 	function (val) {return true}
 )
 
-.run(1)
+.run()
 
 
 
@@ -37,7 +37,7 @@ over_('val0', 'val1')
 	function (val0, val1) {return true}
 )
 
-.run(1)
+.run()
 
 
 
@@ -72,4 +72,20 @@ over_('a', 'b')
 
 )
 
-.run(1)
+.run()
+
+
+
+
+
+
+
+over_('val')
+
+.describe('throw always fails')
+.failsWhen_(
+	function (val) {return true},
+	function (val) {throw 'error! folly! poppycock! tisch! fipsy!'}
+)
+
+.run()
