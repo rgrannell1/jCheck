@@ -102,27 +102,14 @@ over_('val')
 
 
 
-var take = function (num, coll) {
-
-	if (toString.call(num) !== '[object Number]') {
-		throw TypeError('num must be a number')
-	}
-	if (num < 0) {
-		throw RangeError('num must be larger than one.')
-	}
-	if (Math.round(num) !== num) {
-		throw RangeError('num must be a round number')
-	}
-	if (num === Infinity) {
-		var num = coll.length
-	}
-
-	var out = []
-	for (var ith = 0; ith < num; ith++) {
-		out[ith] = coll[ith]
-	}
-	return out
+var firstOf = function (coll) {
+	return coll[0]
 }
+
+
+
+
+
 
 var is = function (type, val) {
 	return toString.call(val) === '[object ' + type + ']'
@@ -130,25 +117,25 @@ var is = function (type, val) {
 
 over_("num", "coll")
 
-.describe("take returns correct length")
+.describe("firstOf returns correct length")
 .holdsWhen_(
 	function (num, coll) {
 		return is("Number", num) && num > 0 && Math.round(num) === num &&
 			is("Array", coll)
 	},
 	function (num, coll) {
-		return take(num, coll).length === num
+		return firstOf(coll).length === num
 	}
 )
 
-.describe("take runs for all numbers")
+.describe("firstOf runs for all numbers")
 .worksWhen_(
 	function (num, coll) {
 		return is("Number", num) && num > 0 && Math.round(num) === num &&
 			is("Array", coll)
 	},
 	function (num, coll) {
-		take(num, coll)
+		firstOf(coll)
 	}
 )
 
