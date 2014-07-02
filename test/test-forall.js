@@ -1,28 +1,43 @@
 
-require('./test-colourise')
-const should = require('should');
+const jcheck     = require('../jcheck')
 
+const over       = jcheck.over
+const over_      = jcheck.over_
 
-
-
-
-
-
-
-
-
-const jcheck = require('../jcheck')
-
-const over  = jcheck.over
-const over_ = jcheck.over_
-
-const describe = jcheck.describe
+const describe   = jcheck.describe
 
 const holdsWhen  = jcheck.holdsWhen
 const holdsWhen_ = jcheck.holdsWhen_
 
-const run = jcheck.run
+const run        = jcheck.run
 
+
+
+
+over_('val')
+
+.describe('true is always true')
+.holdsWhen_(
+	function (val) {return true},
+	function (val) {return true}
+)
+
+.run(1)
+
+
+
+
+
+
+over_('val0', 'val1')
+
+.describe('true is always true')
+.holdsWhen_(
+	function (val0, val1) {return true},
+	function (val0, val1) {return true}
+)
+
+.run(1)
 
 
 
