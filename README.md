@@ -76,12 +76,17 @@ var take = function (num, coll) {
 ```
 
 ```js
+var is = function (type, val) {
+	return toString.call(val) === '[object ' + type + ']'
+}
+
 over_("num", "coll")
 
 .describe("take returns correct length")
 .holdsWhen_(
 	function (num, coll) {
-		return toString.call(num) === "[object Number]" && toString.call(coll) === "[object Array]"
+		return is("Number", num) && num > 0 && Math.round(num) === num &&
+			is("Array", coll)
 	},
 	function (num, coll) {
 		return take(num, coll).length === num
@@ -91,15 +96,15 @@ over_("num", "coll")
 .describe("take runs for all numbers")
 .worksWhen_(
 	function (num, coll) {
-		return toString.call(num) === "[object Number]" && toString.call(coll) === "[object Array]"
+		return is("Number", num) && num > 0 && Math.round(num) === num &&
+			is("Array", coll)
 	},
 	function (num, coll) {
 		take(num, coll)
 	}
 )
 
-.run()
-```
+.run()```
 
 * **over, over_**: Bind several variables to random values.
 
