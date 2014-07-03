@@ -12,13 +12,12 @@ jCheck v0.1.0 [![Build Status](https://travis-ci.org/rgrannell1/jCheck.png?branc
 
 > Alexander Pope.
 
-You want to verify that your programs work. The best way to
-test any assumption is to try disprove it by experimentation, excepting your assumption only when
-no counterexample can be found.
+You want to verify that your programs work. The best way to test any assumption is to try disprove it
+by experimentation and only accept your assumption when no counterexample can be found.
 
 Choosing good test-cases by hand is hard; you will be biased towards picking small test cases,
 you will use a small sample-size, and testing known-corner cases is second best to testing
-unknown corner cases, which are the real source of failures. Random sampling inputs is the only
+unknown corner cases, the real source of failures. Random sampling inputs is the only
 reliable way to test.
 
 The limiting factor to testing is your patience. Test-cases are data, and manually entering data
@@ -28,8 +27,7 @@ omitting more complex cases.
 
 jCheck is my attempt to add convenient, maximally-powerful testing to JavaScript. You won't deal with
 test-case generation at all; you state the inputs a property should hold for, and jCheck verifies your
-property has no counterexamples.
-
+invariant property has no counterexamples.
 
 ## Installation.
 
@@ -68,6 +66,8 @@ input to something smaller and easier to read.
 
 ## Example.
 
+
+
 ```js
 var is = function (type, val) {
 	return toString.call(val) === '[object ' + type + ']'
@@ -83,6 +83,18 @@ over_("num")
 
 .run()
 ```
+
+This test was designed to fail, as there are corner-cases for which `num` is oddly
+not equal to itself in JavaScript. jCheck
+
+## Limitations
+
+jCheck (and property-based tests). As with most tests, jCheck tests are prone to false negatives;
+a property passing suggests it works as expected, but only exhaustive search can prove this. While
+jCheck removes the problem of users selecting convenient test-cases over illustrative ones, the onus is
+you to test useful and general properties of your programs. It is still possible to write weak tests
+by excluding too many random test-cases. Finally, jCheck is at present lousy at testing polyadic functions.
+
 ## License
 
 jCheck is released under the MIT licence.
