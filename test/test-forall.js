@@ -99,44 +99,16 @@ over_('val')
 
 
 
-
-
-
-var firstOf = function (coll) {
-	return coll[0]
-}
-
-
-
-
-
-
 var is = function (type, val) {
 	return toString.call(val) === '[object ' + type + ']'
 }
 
-over_("num", "coll")
+over_("num")
 
-.describe("firstOf returns correct length")
+.describe("test that a number double-equals itself.")
 .holdsWhen_(
-	function (num, coll) {
-		return is("Number", num) && num > 0 && Math.round(num) === num &&
-			is("Array", coll)
-	},
-	function (num, coll) {
-		return firstOf(coll).length === num
-	}
-)
-
-.describe("firstOf runs for all numbers")
-.worksWhen_(
-	function (num, coll) {
-		return is("Number", num) && num > 0 && Math.round(num) === num &&
-			is("Array", coll)
-	},
-	function (num, coll) {
-		firstOf(coll)
-	}
+	function (num, coll) {return is("Number", num)},
+	function (num, coll) {return num == num}
 )
 
 .run()

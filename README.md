@@ -48,80 +48,41 @@ random values. To prove invariants always hold true, properties such as predicat
 failure functions are ran along a stream of random inputs. The tests run for a set timespan,
 and the test-cases get longer and larger over time.
 
-Take this seemingly rigourous implementation of take, which takes the first n elements from
-an array.
+* **over, over_**: Bind several variables to random values.
 
-```js
-var take = function (num, coll) {
+* **describe**: Describe what an assertion proves about your programs.
 
-	if (toString.call(num) !== '[object Number]') {
-		throw TypeError('num must be a number')
-	}
-	if (num < 0) {
-		throw RangeError('num must be larger than one.')
-	}
-	if (Math.round(num) !== num) {
-		throw RangeError('num must be a round number')
-	}
-	if (num === Infinity) {
-		var num = coll.length
-	}
+* **holdsWhen, holdsWhen_**: When a predicate is true, assert that other predicates are true too.
 
-	var out = []
-	for (var ith = 0; ith < num; ith++) {
-		out[ith] = coll[ith]
-	}
-	return out
-}
-```
+* **failsWhen, failsWhen_**: When a predicate is true, assert that other functions always fail.
+
+* **worksWhen, worksWhen_**: When a predicate is true, assert that other functions always run
+without exception.
+
+* **run**: Execute a test object.
+
+Tests can be built-up in any order.
+
+If a predicate fails (or a known-failure fails to fail) jCheck will simplify the errant
+input to something smaller and easier to read.
+
+## Example.
 
 ```js
 var is = function (type, val) {
 	return toString.call(val) === '[object ' + type + ']'
 }
 
-over_("num", "coll")
+over_("num")
 
-.describe("take returns correct length")
+.describe("test that a number double-equals itself.")
 .holdsWhen_(
-	function (num, coll) {
-		return is("Number", num) && is("Array", coll) &&
-			num > 0 && Math.round(num) === num
-	},
-	function (num, coll) {
-		return take(num, coll).length === num
-	}
-)
-
-.describe("take runs for all numbers")
-.worksWhen_(
-	function (num, coll) {
-		return is("Number", num) && is("Array", coll) &&
-			num > 0 && Math.round(num) === num
-	},
-	function (num, coll) {
-		take(num, coll)
-	}
+	function (num, coll) {return is("Number", num)},
+	function (num, coll) {return num == num}
 )
 
 .run()
 ```
-
-* **over, over_**: Bind several variables to random values.
-
-* **describe**: Describe what an assertion proves about your programs.
-
-* **holdsWhen, holdsWhen_**: When a predicate is true, assert that other predicates are true too.
-* **failsWhen, failsWhen_**: When a predicate is true, assert that other functions always fail.
-
-* **run**: Execute a test object.
-
-Tests can be built-up in any order.
-
-If a predicate fails — or a known-failure fails to fail — jCheck will simplify the errant
-input to something smaller and easier to read. jCheck tests can be run from a web interface or,
-for fellow users with bearded necks and sallow faces, from the command-line.
-
 ## License
 
 jCheck is released under the MIT licence.
