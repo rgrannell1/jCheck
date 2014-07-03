@@ -89,8 +89,7 @@ oddly not equal to itself in JavaScript. jCheck
 
 ## Limitations
 
-jCheck (and property-based tests). As with most tests, jCheck tests are prone
- to false negatives;
+As with most tests, jCheck tests are prone to false negatives;
 a property passing suggests it works as expected, but only exhaustive search
 an prove this.
 
