@@ -84,16 +84,25 @@ over_("num")
 .run()
 ```
 
-This test was designed to fail, as there are corner-cases for which `num` is oddly
-not equal to itself in JavaScript. jCheck
+This test was designed to fail, as there are corner-cases for which `num` is
+oddly not equal to itself in JavaScript. jCheck
 
 ## Limitations
 
-jCheck (and property-based tests). As with most tests, jCheck tests are prone to false negatives;
-a property passing suggests it works as expected, but only exhaustive search can prove this. While
-jCheck removes the problem of users selecting convenient test-cases over illustrative ones, the onus is
-you to test useful and general properties of your programs. It is still possible to write weak tests
-by excluding too many random test-cases. Finally, jCheck is at present lousy at testing polyadic functions.
+jCheck (and property-based tests). As with most tests, jCheck tests are prone
+ to false negatives;
+a property passing suggests it works as expected, but only exhaustive search
+an prove this.
+
+While jCheck removes the problem of users selecting convenient test-cases over
+illustrative ones, the onus is you to test useful and general properties of
+your programs; it is still  possible to write weak tests by excluding too
+many random test-cases.
+
+Finally, jCheck is at present lousy at testing polyadic functions. jCheck filters
+parametres bound to random-variables with a single predicate, rather than a
+predicate for each parametre. This makes it take much longer to functions with more
+than one parametre, assumming your predicate is fairly picky.
 
 ## License
 
