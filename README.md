@@ -77,8 +77,8 @@ over_("num")
 
 .describe("test that a number double-equals itself.")
 .holdsWhen_(
-	function (num, coll) {return is("Number", num)},
-	function (num, coll) {return num == num}
+	function (num) {return is("Number", num)},
+	function (num) {return num == num}
 )
 
 .run()
@@ -87,7 +87,7 @@ over_("num")
 This test was designed to fail, as there are corner-cases for which `num` is
 oddly not equal to itself in JavaScript. jCheck
 
-## Limitations
+## Limitations.
 
 As with most tests, jCheck tests are prone to false negatives;
 a property passing suggests it works as expected, but only exhaustive search
@@ -100,10 +100,10 @@ many random test-cases.
 
 Finally, jCheck is at present lousy at testing polyadic functions. jCheck filters
 parametres bound to random-variables with a single predicate, rather than a
-predicate for each parametre. This makes it take much longer to functions with more
-than one parametre, assumming your predicate is fairly picky.
+predicate for each parametre. This makes it take much longer to pick test-cases for
+functions with more than one parametre, assumming your predicate is fairly picky.
 
-## License
+## License.
 
 jCheck is released under the MIT licence.
 
@@ -129,7 +129,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-## Versioning
+## Versioning.
 
 All versions post-release will be compliant with the Semantic Versioning 2.0.0 standard.
 
