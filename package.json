@@ -10,7 +10,8 @@
 			"node test/test-all.js"
 	},
 	"dependencies": {
-     	"genOO": "rgrannell1/genOO"
+     	"genOO": "rgrannell1/genOO",
+     	"is"   : "rgrannell1/is"
 	},
 	"repository": {
 		"type": "git",
