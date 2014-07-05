@@ -94,7 +94,7 @@ oddly not equal to itself in JavaScript.
 If you exclude NaN from your test-cases, you get the following message:
 
 ```
-"test that a number double-equals itself." passed!                  (1525/9909)
+"test that a number double-equals itself." passed!                  (1,525/9,909)
 ```
 
 ## Limitations.
