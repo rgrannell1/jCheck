@@ -99,16 +99,3 @@ over_('val')
 
 
 
-var is = function (type, val) {
-	return toString.call(val) === '[object ' + type + ']'
-}
-
-over_("num")
-
-.describe("test that a number double-equals itself.")
-.holdsWhen_(
-	function (num, coll) {return is("Number", num)},
-	function (num, coll) {return num == num}
-)
-
-.run()
