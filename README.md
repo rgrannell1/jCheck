@@ -85,7 +85,17 @@ over_("num")
 ```
 
 This test was designed to fail, as there are corner-cases for which `num` is
-oddly not equal to itself in JavaScript. jCheck
+oddly not equal to itself in JavaScript.
+
+```
+
+```
+
+If you exclude NaN from your test-cases, you get the following message:
+
+```
+"test that a number double-equals itself." passed!                  (1525/9909)
+```
 
 ## Limitations.
 

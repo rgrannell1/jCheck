@@ -21,28 +21,4 @@ over_('val')
 	function (x) {return true}
 )
 
-.describe('this is a work2')
-.holdsWhen_(
-	function (x) {return true},
-	function (x) {return true},
-	function (x) {return true},
-	function (x) {return true}
-)
-.describe('this is a work3')
-.holdsWhen_(
-	function (x) {return true},
-	function (x) {return true},
-	function (x) {return true},
-	function (x) {return true}
-)
-
-.describe('this is a work4')
-.worksWhen_(
-	function (x) {return true},
-	function (x) {return true},
-	function (x) {return true},
-	function (x) {return true}
-)
-
 .run()
-
