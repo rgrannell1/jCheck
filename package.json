@@ -11,7 +11,8 @@
 	},
 	"dependencies": {
      	"genOO": "rgrannell1/genOO",
-     	"is"   : "rgrannell1/is"
+     	"is"   : "rgrannell1/is",
+     	"string-template" : "*"
 	},
 	"repository": {
 		"type": "git",
