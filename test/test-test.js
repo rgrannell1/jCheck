@@ -22,3 +22,18 @@ over_('val')
 )
 
 .run()
+
+
+
+
+
+
+over_('val')
+
+.describe('this is a work')
+.holdsWhen_(
+	function (x) {return true},
+	function (x) {return false}
+)
+
+.run()
