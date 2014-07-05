@@ -19,6 +19,8 @@ _substituteCategory = require('../lib/shrink')._substituteCategory
 const assert = require('assert')
 const is     = require('is')
 
+
+
 console.log('_remove.array')
 
 	assert(_remove.array([]).length === 0)
