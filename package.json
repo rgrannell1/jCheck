@@ -11,6 +11,6 @@
 	},
 	"dependencies": {
      	"genOO": "https://github.com/rgrannell1/genOO.git",
-	}
+	},
 	"main": "jCheck.js"
 }
