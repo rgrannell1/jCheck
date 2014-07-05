@@ -47,6 +47,9 @@ console.log('_remove.number')
 console.log('_remove.array')
 
 	assert( _remove.array([1, 2, 3]).length === 2 )
-	assert( _remove.array({a: 1, b :2}).size === 1)
 	assert( _remove.array([]).length === 0 )
-	assert( _remove.array({}).size === 0)
+
+console.log('_remove.object')
+
+	assert( Object.keys( _remove.object({a: 1, b: 2}) ).length === 1 )
+	assert( Object.keys( _remove.object({}) ).length === 0 )
