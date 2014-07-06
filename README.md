@@ -87,7 +87,7 @@ over_("num")
 This test was designed to fail, as there are corner-cases for which `num` is
 oddly not equal to itself in JavaScript.
 
-```
+```js
 
 ```
 
