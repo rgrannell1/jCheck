@@ -1,4 +1,5 @@
 
+const is         = require('is')
 
 const jcheck     = require('../jcheck')
 const over       = jcheck.over
@@ -28,12 +29,14 @@ over_('val')
 
 
 
-over_('val')
+over_('num0', 'num1', 'num2')
 
-.describe('this is a work')
+.describe('subtraction is associative')
 .holdsWhen_(
-	function (x) {return true},
-	function (x) {return false}
+	[
+		[is.number, is.number, is.number]
+	],
+	function (a, b, c) {return isFinite(a / b)}
 )
 
 .run()
