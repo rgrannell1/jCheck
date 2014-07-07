@@ -1,15 +1,15 @@
 
-_remove     = require('../lib/shrink')._remove
-_substitute = require('../lib/shrink')._substitute
-_score      = require('../lib/shrink')._remove
+_remove     = require('../lib/mutate')._remove
+_substitute = require('../lib/mutate')._substitute
+_score      = require('../lib/score')._score
 
-remove     = require('../lib/shrink').remove
-substitute = require('../lib/shrink').substitute
-score      = require('../lib/shrink').remove
+remove     = require('../lib/mutate').remove
+substitute = require('../lib/mutate').substitute
+score      = require('../lib/score').score
 
-_removeCategory     = require('../lib/shrink')._removeCategory
-_scoreCategory      = require('../lib/shrink')._scoreCategory
-_substituteCategory = require('../lib/shrink')._substituteCategory
+_removeCategory     = require('../lib/mutate')._removeCategory
+_substituteCategory = require('../lib/mutate')._substituteCategory
+_scoreCategory      = require('../lib/score')._scoreCategory
 
 
 
