@@ -1,13 +1,13 @@
 
 const is         = require('is')
 
-const jcheck     = require('../jcheck')
-const over       = jcheck.over
-const over_      = jcheck.over_
-const describe   = jcheck.describe
-const holdsWhen  = jcheck.holdsWhen
-const holdsWhen_ = jcheck.holdsWhen_
-const run        = jcheck.run
+const jCheck     = require('../jCheck')
+const over       = jCheck.over
+const over_      = jCheck.over_
+const describe   = jCheck.describe
+const holdsWhen  = jCheck.holdsWhen
+const holdsWhen_ = jCheck.holdsWhen_
+const run        = jCheck.run
 
 
 
@@ -19,7 +19,7 @@ over_('val')
 	function (x) {return true},
 	function (x) {return true},
 	function (x) {return true},
-	function (x) {return true}
+	function (x) {return false}
 )
 
 .run()
