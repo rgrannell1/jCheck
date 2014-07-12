@@ -20,7 +20,7 @@ const assert = require('assert')
 const is     = require('is')
 
 
-
+/*
 console.log('_remove.array')
 
 	assert(_remove.array([]).length === 0)
@@ -55,3 +55,4 @@ console.log('_remove.object')
 
 	assert( Object.keys( _remove.object({a: 1, b: 2}) ).length === 1 )
 	assert( Object.keys( _remove.object({}) ).length === 0 )
+*/

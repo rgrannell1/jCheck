@@ -23,20 +23,3 @@ over_('val')
 )
 
 .run()
-
-
-
-
-
-
-over_('num0', 'num1', 'num2')
-
-.describe('subtraction is associative')
-.holdsWhen_(
-	[
-		[is.number, is.number, is.number]
-	],
-	function (a, b, c) {return isFinite(a / b)}
-)
-
-.run()
