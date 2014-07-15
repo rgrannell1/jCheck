@@ -88,7 +88,15 @@ This test was designed to fail, as there are corner-cases for which `num` is
 oddly not equal to itself in JavaScript.
 
 ```js
+Failed! after 1 test case.
 
+"test that a number double-equals itself." failed!
+
+function (num) {return num == num}
+
+failed 144 times.
+
+[ NaN ]
 ```
 
 If you exclude NaN from your test-cases, you get the following message:

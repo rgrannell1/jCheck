@@ -10,12 +10,16 @@ const holdsWhen_ = jCheck.holdsWhen_
 const run        = jCheck.run
 
 
-over_('val')
+var isa = function (type, val) {
+	return toString.call(val) === '[object ' + type + ']'
+}
 
-.describe('numbers equal themselves')
+over_("num")
+
+.describe("test that a number double-equals itself.")
 .holdsWhen_(
-	function (x) {return is.number(x)},
-	function (x) {return x === x}
+	function (num) {return isa("Number", num)},
+	function (num) {return num == num}
 )
 
 .run()
