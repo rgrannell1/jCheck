@@ -1,5 +1,5 @@
 
-const jcheck     = require('../jcheck')
+const jcheck     = require('../jCheck')
 
 const over       = jcheck.over
 const over_      = jcheck.over_
