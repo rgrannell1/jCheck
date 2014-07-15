@@ -10,6 +10,16 @@ const holdsWhen_ = jCheck.holdsWhen_
 const run        = jCheck.run
 
 
+over_('val')
+
+.describe('numbers equal themselves')
+.holdsWhen_(
+	function (x) {return is.number(x)},
+	function (x) {return x === x}
+)
+
+.run()
+
 
 
 over_('val')
@@ -19,7 +29,7 @@ over_('val')
 	function (x) {return true},
 	function (x) {return true},
 	function (x) {return true},
-	function (x) {return false}
+	function (x) {return true}
 )
 
 .run()
