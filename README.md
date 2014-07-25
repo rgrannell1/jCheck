@@ -109,12 +109,12 @@ If you exclude NaN from your test-cases, you get the following message:
 
 As with most tests, jCheck tests are prone to false negatives;
 a property passing suggests it works as expected, but only exhaustive search
-an prove this.
+can prove this.
 
 While jCheck removes the problem of users selecting convenient test-cases over
-illustrative ones, the onus is you to test useful and general properties of
-your programs; it is still  possible to write weak tests by excluding too
-many random test-cases.
+illustrative ones, the onus is on you to test useful and general properties of
+your programs; a useless test will say little. It is still possible to write weak
+tests by excluding too many random test-cases.
 
 Finally, jCheck is at present lousy at testing polyadic functions. jCheck filters
 parametres bound to random-variables with a single predicate, rather than a
