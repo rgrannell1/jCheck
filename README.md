@@ -94,7 +94,7 @@ Failed! after 1 test case.
 
 function (num) {return num == num}
 
-failed 144 times.
+failed 1,007 times. Counterexample:
 
 [ NaN ]
 ```
