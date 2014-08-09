@@ -31,19 +31,46 @@ invariant property has no counterexamples.
 
 ## Installation.
 
-```bash
-git clone https://github.com/rgrannell1/jCheck.git
-cd jCheck
+#### - Dependencies
+
+To install node.js on Ubuntu use
+
+```
+sudo add-apt-repository ppa:chris-lea/node.js
+sudo apt-get update
+sudo apt-get install nodejs
 ```
 
+Then to install jCheck, go to the top-level of your project and enter;
 
+```bash
+sudo npm install rgrannell1/jCheck
+```
 
+Then, add the following boilerplate to the top of your tests:
+
+```js
+const jCheck     = require('jCheck')
+const over       = jCheck.over
+const over_      = jCheck.over_
+const describe   = jCheck.describe
+const holdsWhen  = jCheck.holdsWhen
+const holdsWhen_ = jCheck.holdsWhen_
+const run        = jCheck.run
+```
+
+Or, if you always use `over_` as the entry point to your tests (which is not demanded of you)
+simply use
+
+```js
+const over = require('jCheck').over
+```
 
 ## Language.
 
-jCheck has a tiny grammar. A jCheck test binds parametres — in this case 'a' and 'b' — to
+jCheck has a small vocabulary. A jCheck test binds parametres — in this case 'a' and 'b' — to
 random values. To prove invariants always hold true, properties such as predicates and known
-failure functions are ran along a stream of random inputs. The tests run for a set timespan,
+failure functions are ran over a stream of random inputs. The tests run for a set timespan,
 and the test-cases get longer and larger over time.
 
 * **over, over_**: Bind several variables to random values.
@@ -59,14 +86,14 @@ without exception.
 
 * **run**: Execute a test object.
 
-Tests can be built-up in any order.
+Tests can be built-up in any order, though I prefer the test structure below. The exception to this
+rule is that `run( )` must be the final method call in a test; attempts to place it elsewhere will
+prematurely execute tests.
 
 If a predicate fails (or a known-failure fails to fail) jCheck will simplify the errant
 input to something smaller and easier to read.
 
 ## Example.
-
-
 
 ```js
 var is = function (type, val) {
@@ -113,13 +140,12 @@ can prove this.
 
 While jCheck removes the problem of users selecting convenient test-cases over
 illustrative ones, the onus is on you to test useful and general properties of
-your programs; a useless test will say little. It is still possible to write weak
-tests by excluding too many random test-cases.
+your programs; a useless property will say little. It is still possible to write
+weak tests by excluding too many random test-cases.
 
 Finally, jCheck is at present lousy at testing polyadic functions. jCheck filters
-parametres bound to random-variables with a single predicate, rather than a
-predicate for each parametre. This makes it take much longer to pick test-cases for
-functions with more than one parametre, assumming your predicate is fairly picky.
+random-variables with a single predicate, rather than a predicate for each parametre.
+This makes it take much longer to pick test-cases for functions with more than one parametre.
 
 ## License.
 
