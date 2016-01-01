@@ -2,7 +2,7 @@
 	"name":
 		"jCheck",
 	"version":
-		"0.1.0",
+		"0.1.1",
 	"description":
 		"Property-based JavaScript checking.",
 	"scripts": {
@@ -10,7 +10,6 @@
 			"node test/test-all.js"
 	},
 	"dependencies": {
-     	"genOO": "rgrannell1/genOO",
      	"is"   : "rgrannell1/is",
      	"string-template" : "*"
 	},
